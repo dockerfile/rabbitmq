@@ -1,7 +1,7 @@
 ## RabbitMQ Dockerfile
 
 
-This repository contains **Dockerfile** of [RabbitMQ](http://www.rabbitmq.com/) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/dockerfile/rabbitmq/) published to the public [Docker Registry](https://index.docker.io/).
+This repository contains **Dockerfile** of [RabbitMQ](http://www.rabbitmq.com/) for [Docker](https://www.docker.com/)'s [automated build](https://registry.hub.docker.com/u/dockerfile/rabbitmq/) published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
 
 ### Dependencies
@@ -11,9 +11,9 @@ This repository contains **Dockerfile** of [RabbitMQ](http://www.rabbitmq.com/) 
 
 ### Installation
 
-1. Install [Docker](https://www.docker.io/).
+1. Install [Docker](https://www.docker.com/).
 
-2. Download [trusted build](https://index.docker.io/u/dockerfile/rabbitmq/) from public [Docker Registry](https://index.docker.io/): `docker pull dockerfile/rabbitmq`
+2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/rabbitmq/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/rabbitmq`
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/rabbitmq" github.com/dockerfile/rabbitmq`)
 
