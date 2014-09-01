@@ -7,7 +7,7 @@
 # Pull base image.
 FROM dockerfile/ubuntu
 
-# Install MariaDB.
+# Install RabbitMQ.
 RUN \
   wget -qO - http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | apt-key add - && \
   echo "deb http://www.rabbitmq.com/debian/ testing main" > /etc/apt/sources.list.d/rabbitmq.list && \
