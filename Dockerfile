@@ -15,7 +15,9 @@ RUN \
   DEBIAN_FRONTEND=noninteractive apt-get install -y rabbitmq-server && \
   rm -rf /var/lib/apt/lists/* && \
   rabbitmq-plugins enable rabbitmq_management && \
-  echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config
+  echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config && \
+  echo -e '#!/bin/bash\n\nchown -R rabbitmq:rabbitmq /data && rabbitmq-server $@' > /usr/local/bin/rabbitmq-start && \
+  chmod +x /usr/local/bin/rabbitmq-start
 
 # Define environment variables.
 ENV RABBITMQ_LOG_BASE /data/log
@@ -28,7 +30,7 @@ VOLUME ["/data/log", "/data/mnesia"]
 WORKDIR /data
 
 # Define default command.
-CMD ["rabbitmq-server"]
+CMD ["rabbitmq-start"]
 
 # Expose ports.
 EXPOSE 5672
