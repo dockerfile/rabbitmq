@@ -7,6 +7,9 @@
 # Pull base image.
 FROM dockerfile/ubuntu
 
+# Add files.
+ADD bin/rabbitmq-start /usr/local/bin/
+
 # Install RabbitMQ.
 RUN \
   wget -qO - http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | apt-key add - && \
@@ -16,7 +19,6 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rabbitmq-plugins enable rabbitmq_management && \
   echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config && \
-  echo -e '#!/bin/bash\n\nchown -R rabbitmq:rabbitmq /data && rabbitmq-server $@' > /usr/local/bin/rabbitmq-start && \
   chmod +x /usr/local/bin/rabbitmq-start
 
 # Define environment variables.

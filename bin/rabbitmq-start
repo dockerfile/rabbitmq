@@ -1,0 +1,4 @@
+#!/bin/bash
+
+chown -R rabbitmq:rabbitmq /data
+rabbitmq-server $@
