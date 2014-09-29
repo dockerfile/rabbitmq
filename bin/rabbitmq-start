@@ -1,5 +1,16 @@
 #!/bin/bash
-
+PORT=5672
+HTTP_PORT=15672
+while getopts "p:h:" opts; do
+   case ${opts} in
+        h) HTTP_PORT=${OPTARG} ;;      
+	p) PORT=${OPTARG};;
+   esac
+done
+sed -i "s/15672/${HTTP_PORT}/g" /etc/rabbitmq/rabbitmq.config
+sed -i "s/5672/${PORT}/g" /etc/rabbitmq/rabbitmq.config
+echo "HTTP_PORT=$HTTP_PORT"
+echo "PORT=$PORT"
 ulimit -n 1024
 chown -R rabbitmq:rabbitmq /data
 rabbitmq-server $@
