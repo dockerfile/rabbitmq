@@ -18,7 +18,7 @@ RUN \
   DEBIAN_FRONTEND=noninteractive apt-get install -y rabbitmq-server && \
   rm -rf /var/lib/apt/lists/* && \
   rabbitmq-plugins enable rabbitmq_management && \
-  echo "[{rabbit, [{loopback_users, []},{tcp_listeners,[{'127.0.0.1',5672}]}]}, {rabbitmq_management, [{listener, [{port, 15672}]}]}]." > /etc/rabbitmq/rabbitmq.config && \
+  echo "[{rabbit, [{loopback_users, []},{tcp_listeners,[{5672}]}]}, {rabbitmq_management, [{listener, [{port, 15672}]}]}]." > /etc/rabbitmq/rabbitmq.config && \
   chmod +x /usr/local/bin/rabbitmq-start
 
 # Define environment variables.
