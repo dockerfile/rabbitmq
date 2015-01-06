@@ -6,7 +6,7 @@
 # wont reach rabbitmq. This ends up timing out on the Docker-side
 # for default 10 seconds, till we (the container) is getting killed.
 # We need to trap SIGTERM to handle this.
-PID=; trap '[[ ${PID} ]] && /usr/sbin/rabbitmqctl stop; exit 0' SIGTERM
+PID=; trap '[[ ${PID} ]] && /usr/sbin/rabbitmqctl stop; exit 0' SIGTERM SIGINT
 
 ulimit -n 1024
 chown -R rabbitmq:rabbitmq /data
