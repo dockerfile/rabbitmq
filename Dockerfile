@@ -19,7 +19,8 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rabbitmq-plugins enable rabbitmq_management && \
   echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config && \
-  chmod +x /usr/local/bin/rabbitmq-start
+  ulimit -n 1024 && \
+  chown -R rabbitmq:rabbitmq /data
 
 # Define environment variables.
 ENV RABBITMQ_LOG_BASE /data/log
@@ -32,7 +33,7 @@ VOLUME ["/data/log", "/data/mnesia"]
 WORKDIR /data
 
 # Define default command.
-CMD ["rabbitmq-start"]
+CMD ["/usr/sbin/rabbitmq-server"]
 
 # Expose ports.
 EXPOSE 5672
