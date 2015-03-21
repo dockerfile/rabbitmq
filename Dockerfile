@@ -19,8 +19,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rabbitmq-plugins enable rabbitmq_management && \
   echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config && \
-  ulimit -n 1024 && \
-  chown -R rabbitmq:rabbitmq /data
+  ulimit -n 1024
 
 # Define environment variables.
 ENV RABBITMQ_LOG_BASE /data/log
@@ -28,6 +27,7 @@ ENV RABBITMQ_MNESIA_BASE /data/mnesia
 
 # Define mount points.
 VOLUME ["/data/log", "/data/mnesia"]
+RUN chown -R rabbitmq:rabbitmq /data
 
 # Define working directory.
 WORKDIR /data
