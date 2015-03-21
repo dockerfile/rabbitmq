@@ -7,9 +7,6 @@
 # Pull base image.
 FROM dockerfile/ubuntu
 
-# Add files.
-ADD bin/rabbitmq-start /usr/local/bin/
-
 # Install RabbitMQ. Explicitly create data directories with rabbitmq as owner.
 # See http://stackoverflow.com/questions/26145351/why-doesnt-chown-work-in-dockerfile.
 RUN \
