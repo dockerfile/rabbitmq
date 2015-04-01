@@ -1,3 +1,7 @@
+# This project is deprecated and (as of mid March 2015) not working as documented.
+## See https://registry.hub.docker.com/u/dockerfile/rabbitmq/ for information about a replacement. 
+## See comments on that same page for info on what is broken, along with workarounds.
+
 ## RabbitMQ Dockerfile
 
 
