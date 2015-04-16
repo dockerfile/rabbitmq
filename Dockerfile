@@ -31,9 +31,9 @@ VOLUME ["/data/log", "/data/mnesia"]
 # Define working directory.
 WORKDIR /data
 
-# Define default command.
-CMD ["rabbitmq-start"]
-
 # Expose ports.
 EXPOSE 5672
 EXPOSE 15672
+
+# Define default command.
+CMD rabbitmq-start
