@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM ubuntu:14.04
+FROM library/ubuntu
 
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
