@@ -5,10 +5,15 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM library/ubuntu
 
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
+
+# Install debian dependencies
+RUN apt-get update -q && \
+    apt-get install -y \
+    wget
 
 # Install RabbitMQ.
 RUN \
@@ -31,9 +36,9 @@ VOLUME ["/data/log", "/data/mnesia"]
 # Define working directory.
 WORKDIR /data
 
-# Define default command.
-CMD ["rabbitmq-start"]
-
 # Expose ports.
 EXPOSE 5672
 EXPOSE 15672
+
+# Define default command.
+CMD rabbitmq-start
