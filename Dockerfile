@@ -10,6 +10,11 @@ FROM library/ubuntu
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
 
+# Install debian dependencies
+RUN apt-get update -q && \
+    apt-get install -y \
+    wget
+
 # Install RabbitMQ.
 RUN \
   wget -qO - https://www.rabbitmq.com/rabbitmq-signing-key-public.asc | apt-key add - && \
