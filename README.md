@@ -6,14 +6,14 @@ This repository contains **Dockerfile** of [RabbitMQ](http://www.rabbitmq.com/) 
 
 ### Base Docker Image
 
-* [dockerfile/ubuntu](http://dockerfile.github.io/#/ubuntu)
+* [ubuntu](http://dockerfile.github.io/#/ubuntu)
 
 
 ### Installation
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/rabbitmq/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/rabbitmq`
+2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/rabbitmq/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull rabbitmq`
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/rabbitmq" github.com/dockerfile/rabbitmq`)
 
