@@ -4,13 +4,13 @@ This script makes use of the **rabbitmq_management** plugin.  It uses the curren
 
 
 #### Usage:
-`python tunnel_gui.py /path/to/ssh/key DNS_of_queue IP_of_barenboim`
+`./tunnel.sh DNS_of_queue IP_of_barenboim`
 
-The last two arguments are optional, and default to `queue.ofh.priv` and the IP address of prod barenboim, respectively.
+The two arguments are optional, and default to `queue.ofh.priv` and `ansible.ofh.priv`, respectively.
 
 Example:
 
-`python tunnel_gui.py $PROD_PRIVATE_KEY`
+`chmod +x tunnel.sh; ./tunnel.sh`
 
 
 Then point a browser at `localhost:15672`.  
