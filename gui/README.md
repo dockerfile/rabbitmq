@@ -10,7 +10,7 @@ The two arguments are optional, and default to `queue.ofh.priv` and `ansible.ofh
 
 Example:
 
-`chmod +x tunnel.sh; ./tunnel.sh`
+`./tunnel.sh`
 
 
 Then point a browser at `localhost:15672`.  
