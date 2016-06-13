@@ -13,17 +13,17 @@ This repository contains **Dockerfile** of [RabbitMQ](http://www.rabbitmq.com/) 
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/rabbitmq/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/rabbitmq`
+2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/rabbitmq/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull rabbitmq`
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/rabbitmq" github.com/dockerfile/rabbitmq`)
+   (alternatively, you can build an image from Dockerfile: `docker build -t="rabbitmq" github.com/dockerfile/rabbitmq`)
 
 
 ### Usage
 
 #### Run `rabbitmq-server`
 
-    docker run -d -p 5672:5672 -p 15672:15672 dockerfile/rabbitmq
+    docker run -d -p 5672:5672 -p 15672:15672 rabbitmq
 
 #### Run `rabbitmq-server` w/ persistent shared directories.
 
-    docker run -d -p 5672:5672 -p 15672:15672 -v <log-dir>:/data/log -v <data-dir>:/data/mnesia dockerfile/rabbitmq
+    docker run -d -p 5672:5672 -p 15672:15672 -v <log-dir>:/data/log -v <data-dir>:/data/mnesia rabbitmq
