@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:16.04
 
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
