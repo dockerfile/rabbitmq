@@ -12,7 +12,7 @@ ADD bin/rabbitmq-start /usr/local/bin/
 
 # Install RabbitMQ.
 RUN \
-  wget -qO - https://www.rabbitmq.com/rabbitmq-signing-key-public.asc | apt-key add - && \
+  wget -O - "https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc" | sudo apt-key add - && \
   echo "deb http://www.rabbitmq.com/debian/ testing main" > /etc/apt/sources.list.d/rabbitmq.list && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y rabbitmq-server && \
